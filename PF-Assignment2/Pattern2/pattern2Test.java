@@ -39,6 +39,16 @@ public class pattern2Test {
 		String[] pyramidExpect = { "1 2 3 4 5 ", "  1 2 3 4 ", "    1 2 3 ", "      1 2 ", "        1 " };
 		String[] pyramidReturn;
 		pyramidReturn = patternobj.wholePyramid(5);
-		assertEquals("Pyramid are not Correct", pyramidExpect, pyramidReturn);
+		assertEquals("Pyramid is not Correct", pyramidExpect, pyramidReturn);
+	}
+	/*
+	 * Test method to check wrong expected output
+	 */
+	@Test
+	public void checkPyramidWrongOutput() {
+		String[] pyramidExpect = { "1 2 3 4 5 6 ", "  1 2 3 4 ", "    1 2 3 ", "      1 2 ", "        1 " };
+		String[] pyramidReturn;
+		pyramidReturn = patternobj.wholePyramid(5);
+		assertEquals("Expected Output is not Correct", pyramidExpect, pyramidReturn);
 	}
 }
