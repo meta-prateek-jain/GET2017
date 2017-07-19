@@ -1,3 +1,6 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 /**
  * 	Programming fundamental assignment 2
  * 
@@ -16,7 +19,7 @@
  * @author Prateek Jain
  *	Assumption n is 1 greater than the size of pyramid need to print
  */
-public class pattern {
+public class Pattern {
 	/*
 	 * This function calculates space for particular row 
 	 */
@@ -34,6 +37,10 @@ public class pattern {
 		 * This block add spaces to string 'space' if row is greater than half of pyramide size
 		 */
 		else {
+			if( n%2 !=0)
+			{
+				++n;
+			}
 			for (int loop1 = 0; loop1 < (row - (n / 2)); loop1++) {
 				space = space + "  ";
 			}
@@ -85,16 +92,56 @@ public class pattern {
 	/*
 	 * This function return array of strings containing individual row as a single string element
 	 */
-	public String[] wholePyramid(int n) {
-		pattern patterObject = new pattern();
-		String[] pyramidArray = new String[n - 1];
-		int count;
+	public String[] wholePyramid(int n) throws NegativeArraySizeException{
+		Pattern patterObject = new Pattern();
+		try {
+			String[] pyramidArray = new String[n - 1];
+			int count;
+			/*
+			 * This loop add value to pyramidArray by using two functions
+			 */
+			for (count = 1; count < n; count++) {
+				pyramidArray[count - 1] = patterObject.space(count, n) + patterObject.numbers(count, n);
+			}
+			return pyramidArray;
+		} 
 		/*
-		 * This loop add value to pyramidArray by using two functions
+		 * Catching the Negative Array Size Exception
 		 */
-		for (count = 1; count < n; count++) {
-			pyramidArray[count - 1] = patterObject.space(count, n) + patterObject.numbers(count, n);
+		catch (NegativeArraySizeException error) {
+			System.out.println("Array Size Should be greater than zero");
+			return null;
 		}
-		return pyramidArray;
+	}
+	public static void main(String[] args){
+		/*
+		 * Created an object of Pattern Class
+		 */
+		Pattern patternobj = new Pattern();
+		int rowSize;
+		Scanner scanner = new Scanner(System.in);
+		/*
+		 * Taking input from user the number of rows to print
+		 */
+		System.out.println("Enter the Number of rows");
+		try{
+			rowSize = scanner.nextInt();
+			String pyramid[] = patternobj.wholePyramid(rowSize+1);
+			/*
+			 * Checking pyramid array for null value
+			 */
+			if (pyramid != null) {
+				System.out.println("The Pyramid is :");
+				for (String string : pyramid) {
+					System.out.println(string);
+				}
+			}
+		}
+		/*
+		 * Catching the Input mismatch exception
+		 */
+		catch(InputMismatchException error){
+			System.out.println("Enter the correct Input");
+		}
 	}
 }

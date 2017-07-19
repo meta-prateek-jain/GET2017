@@ -7,8 +7,8 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class pattern2Test {
-	pattern2 patternobj = new pattern2();				//pattern class object
+public class Pattern2Test {
+	Pattern2 patternobj = new Pattern2();				//pattern class object
 	/*
 	 * first test method to check spaces in a row
 	 */
@@ -19,7 +19,7 @@ public class pattern2Test {
 		String spaceReturn;
 		spaceReturn = patternobj.space(4);
 		spaceReturnlength = (spaceReturn.length() / 2);
-		assertEquals("Spaces are not Correct", spaceExpect, spaceReturnlength);
+		assertEquals(spaceExpect, spaceReturnlength);
 	}
 	/*
 	 * Test method to check numbers in a row
@@ -29,7 +29,7 @@ public class pattern2Test {
 		String numberExpect = "1 2 ";
 		String numberReturn;
 		numberReturn = patternobj.numbers(4, 5);
-		assertEquals("Numbers are not Correct", numberExpect, numberReturn);
+		assertEquals(numberExpect, numberReturn);
 	}
 	/*
 	 * Test method to check whole pyramid
@@ -39,7 +39,17 @@ public class pattern2Test {
 		String[] pyramidExpect = { "1 2 3 4 5 ", "  1 2 3 4 ", "    1 2 3 ", "      1 2 ", "        1 " };
 		String[] pyramidReturn;
 		pyramidReturn = patternobj.wholePyramid(5);
-		assertEquals("Pyramid is not Correct", pyramidExpect, pyramidReturn);
+		/*
+		 * Printing the pattern
+		 */
+		if (pyramidReturn != null) {
+			System.out.println("The Pyramid is :");
+			for (String string : pyramidReturn) {
+				System.out.println(string);
+			}
+		}
+		assertEquals(pyramidExpect, pyramidReturn);
+		
 	}
 	/*
 	 * Test method to check wrong expected output
@@ -49,6 +59,6 @@ public class pattern2Test {
 		String[] pyramidExpect = { "1 2 3 4 5 6 ", "  1 2 3 4 ", "    1 2 3 ", "      1 2 ", "        1 " };
 		String[] pyramidReturn;
 		pyramidReturn = patternobj.wholePyramid(5);
-		assertEquals("Expected Output is not Correct", pyramidExpect, pyramidReturn);
+		assertNotEquals(pyramidExpect, pyramidReturn);
 	}
 }
