@@ -1,0 +1,5 @@
+Overall Rating of service ?,(Type) Single Select, Options - (1/2/3/4/5)
+Area of improvement ? ,(Type) Multi Select,Options - (Service Quality/Communication/Delivery Process) Enter '/' between options
+Feedback ? ,(Type)Text
+Contact No. ? ,(Type) Number
+Name ? ,(Type)Text
