@@ -1,0 +1,17 @@
+
+###############################################
+YOUR ORDER  : 
+###############################################
+
+PURCHASED PRODUCTS :  
+Product : 1002 - Reebok Shoes 
+Cost    : Rs.47968.0(32 x 1499.0)
+
+Subtotal : Rs. 47968.0
+
+Promotion : Rs.250.0 off on  Reebok Shoes  [Code:1002]
+Discount  : 8000.0
+
+Product Promotions Discount : Rs.8000.0
+Order Promotion Applied : 10.0 % off on 1500.0 and above order
+Final Amount Payable : Rs.35971.2
