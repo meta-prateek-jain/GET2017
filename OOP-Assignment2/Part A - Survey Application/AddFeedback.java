@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+import util.FileHandling;
 /**
  * Class takes feedback from user and store answers in Report-B and 
  * percentage distribution of participants’ choice for single select question only in Report-A
@@ -16,7 +16,7 @@ public class AddFeedback {
 	 * @throws IOException
 	 */
 	public void addFeedback() throws InputMismatchException, IOException {
-		Questions question = new Questions();
+		FileHandling fileHandling = new FileHandling();
 		Survey survey = new Survey();
 		Scanner scan = new Scanner(System.in);
 		String questionList[][] = {};
@@ -31,12 +31,12 @@ public class AddFeedback {
 				System.out.println("Number of users should be greater than zero");
 			}
 			// Takes the list of questions from Questions.txt
-			questionList = question.read("src/Documents/Questions.txt");
+			questionList = fileHandling.read("src/Documents/Questions.txt");
 			// loop iterate noOfUsers times to take their feedback
 			for (int index = 0; index < noOfUsers; index++) {
-				question.input(index + 1, questionList);
+				new Questions().input(index + 1, questionList);
 			}
-			questionList = question.read("src/Documents/Report-B.txt");
+			questionList = fileHandling.read("src/Documents/Report-B.txt");
 			int percentage[] = new int[6];
 			for (int index = 0; index < noOfUsers; index++) {
 				percentage[Integer.parseInt(questionList[index][1])] += 1;
@@ -45,11 +45,11 @@ public class AddFeedback {
 			for (int index = 1; index < 6; index++) {
 				if (percentage[index] != 0) {
 					percentage[index] = (int) ((percentage[index] / (float) noOfUsers) * 100);
-					question.writeToFile(index + " - " + percentage[index] + "%", "src/Documents/Report-A.txt");
-					question.writeToFile("-1", "src/Documents/Report-A.txt");
+					fileHandling.writeToFile(index + " - " + percentage[index] + "%", "src/Documents/Report-A.txt");
+					fileHandling.writeToFile("-1", "src/Documents/Report-A.txt");
 				} else {
-					question.writeToFile(index + " - " + percentage[index] + "%", "src/Documents/Report-A.txt");
-					question.writeToFile("-1", "src/Documents/Report-A.txt");
+					fileHandling.writeToFile(index + " - " + percentage[index] + "%", "src/Documents/Report-A.txt");
+					fileHandling.writeToFile("-1", "src/Documents/Report-A.txt");
 				}
 			}
 			survey.showMenu();
