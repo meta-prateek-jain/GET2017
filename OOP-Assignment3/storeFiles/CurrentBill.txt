@@ -1,0 +1,19 @@
+
+###############################################
+YOUR ORDER  : 
+###############################################
+
+PURCHASED PRODUCTS :  
+Product : 1001 - Reebok Sneakers
+Cost    : Rs.29667.0(33 x 899.0)
+
+Product : 1002 - Reebok Shoes 
+Cost    : Rs.2998.0(2 x 1499.0)
+
+Subtotal : Rs. 32665.0
+Promotion : Rs.250.0off on  Reebok Shoes  [Code:1002]  Reebok Pullover [Code:1007]  Puma Shoes  [Code:1012]  Puma Pullover [Code:1017]
+Discount  : 500.0
+
+Product Promotions Discount : Rs.500.0
+Order Promotion Applied : 10.0 % off on 1500.0 and above order
+Final Amount Payable : Rs.28948.5
