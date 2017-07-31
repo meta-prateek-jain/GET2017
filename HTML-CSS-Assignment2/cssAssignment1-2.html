@@ -1,0 +1,263 @@
+<html>
+<head>
+	<style type="text/css">
+		*{
+			margin : 0;
+			padding : 0;
+		}
+		body{
+			background: url("pattern.jpg");
+		}
+		.container{
+			background: #ffffff;
+			margin: 20px;
+			min-height: 700px;
+		}
+		#header, #footer{
+			background: #e3ebff;
+			text-align: center;
+		}
+		#header{
+			padding: 10px; 
+			height: 70px;
+		}
+		#footer{
+			padding: 20px;
+		}
+		#navbar{
+			background: #697484;
+			height : 40px;
+		}
+		#navbar ul{
+			margin-top: 0px;
+			padding: 20px;
+			padding-top: 11px;
+			padding-left : 0px;
+			list-style-type: none;
+		}
+		#navbar ul li{
+			display: inline;
+			padding: 10px;
+			font-weight: bold;
+			background: transparent;
+		}
+		#navbar ul .active{
+			background-color:#646EF9;
+			border : solid 1px #000000;
+		}
+		#navbar ul li:hover{
+			background: #646EF9;
+			border: solid 1px #000000;
+		}
+		#content{
+			display: flex;
+		}
+		.section{
+			margin: 20px;
+			margin-top : 3px;
+		}
+		#left-bar{
+			max-width: 25%;
+		}
+		#right-bar{
+			max-width: 25%;
+		}
+		#middle-bar{
+			flex:1;
+		}
+		.block{
+			background-color: #fdfcf9;
+			padding: 10px;
+			margin-top: 10px;
+			border: solid 1px #fdfcff;
+		}
+		.block-head{
+			background: #e3efef;
+			padding: 10px;
+			font-weight: bold;
+			font-size: 1.5em;
+			margin-bottom: 10px;
+		}
+		.block-body{
+			margin-top: 2px;
+			padding: 10px;
+		}
+		.block:hover .block-body{
+			display: block;
+		}
+		a.as-block .block-body:hover{
+			background: #e3efef;
+		}
+		a{
+			text-decoration: none;
+		}
+		a.underline .block-body{
+			text-decoration: underline;
+			padding: 1px;
+			padding-left: 10px;
+		}
+		a.underline #hoverlink:hover{
+			color:red;
+		}
+		.main-heading{
+			font-size: 40px;
+		}
+		.starting-text{
+			font-size: 1.2em;
+		}
+		.image{
+			padding: 10px;
+		}
+		#copyright{
+			padding-top: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<!-- Division for header block-->
+		<div id="header">
+			<h1>Enter Site Title</h1>
+			<h3>Enter Site Slogan</h3>
+		</div>
+		<!-- Division for navigation tabs-->
+		<div id="navbar">
+			<ul>
+				<li class="active"><a href="">New Page</a></li>
+				<li><a href="">New Page 2</a></li>
+			</ul>
+		</div>
+		<!--Division for body content-->
+		<div id="content">
+			<!--Division for left navigation bar and block-->
+			<div class="section" id="left-bar">
+				<div class="block" id="block1">
+					<div class="block-head">
+						Vertical Menu
+					</div>
+					<a class="as-block" href="">
+						<div class="block-body" style="background-color:#e3efef">
+							New Page 1
+						</div>
+					</a>
+					<a class="as-block" href="">
+						<div class="block-body">
+							New Page 2
+						</div>
+					</a>
+				</div>
+				<div class="block" id="block2">
+					<div class="block-head">
+						New Block
+					</div>
+					<div class="block-body">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+					</div>	
+				</div>
+			</div>
+			<!--Division for middle body content-->
+			<div class="section" id="middle-bar">
+				<h1 class="main-heading">
+					New Page
+				</h1>
+				<div style="height : 10px"></div>
+				<div class="starting-text">
+					Enter Page Content here...
+				</div>
+				<div class="image">
+					<img src="sample-image.jpg" width="100%">
+				</div>
+				<div class="main-text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+					<div style="height : 5px"></div>
+					<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
+				</div>
+			</div>
+			<!--Division for right section-->
+			<div class="section" id="right-bar">
+				<div class="block" id="block3">
+					<div class="block-head">
+						Search
+					</div>
+					<div class="block-body">
+						<form>
+							<input type="text" name="text-search">
+							<div style="height : 3px"></div>
+							<input style="background-color:#6F7C8E; height:30px; width:80px; margin:0px;" type="submit" name="search" value="Search">
+						</form>
+					</div>
+				</div>
+				<div class="block" id="block3">
+					<div class="block-head">
+						Categories
+					</div>
+					<div class="block-body">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit
+					</div>
+					<a class="underline" href="">
+						<div class="block-body">
+							All News
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body">
+							Best of the Year
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body">
+							Hyperlink
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body" style="text-decoration:none">
+							Visitedlink
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body" id ="hoverlink"style="text-decoration:none">
+							Hoverlink
+						</div>
+					</a>
+				</div>
+				<div class="block" id="block4">
+					<div class="block-head">
+						Archives
+					</div>
+					<a class="underline" href="">
+						<div class="block-body">
+							July 2017
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body">
+							June 2017
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body">
+							May 2017
+						</div>
+					</a>
+					<a class="underline" href="">
+						<div class="block-body">
+							April 2017
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<!--Division for footer links-->
+		<div id="footer">
+			<div>
+				<a href="">Link 1</a> | 
+				<a href="">Link 2</a> | 
+				<a href="">Link 3</a>
+			</div>
+			<div id="copyright">
+				Copyright &copy; 2017. All Rights Reserved.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
