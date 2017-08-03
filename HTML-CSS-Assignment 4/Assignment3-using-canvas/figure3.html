@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<body>
+	<canvas id="figure3" width="300" height="300" >
+	</canvas>
+	<script>
+	var canvas = document.getElementById("figure3");
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(105,150,59,0,2*Math.PI);
+	ctx.lineWidth = 10;
+    ctx.strokeStyle = 'purple';
+	ctx.stroke();
+	</script>
+</body>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<body>
+	<canvas id="figure2" width="300" height="300" >
+	</canvas>
+	<script>
+	var canvas = document.getElementById("figure2");
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(105,150,60,Math.PI/2,3*Math.PI/2);
+	ctx.fillStyle = "blue";
+	ctx.fill();
+	ctx.stroke();
+	
+	ctx.beginPath();
+	ctx.arc(105,150,59,3*Math.PI/2,Math.PI/2);
+	ctx.lineWidth = 5;
+    ctx.strokeStyle = '#a1aab7';
+	ctx.stroke();
+	</script>
+</body>

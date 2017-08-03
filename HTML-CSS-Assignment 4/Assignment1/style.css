@@ -1,0 +1,105 @@
+		*{
+			box-sizing : border-box;
+			line-height: 1.7em;
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-color : #bcc1c6;
+			padding : 20px;
+		}
+		#heading{
+			padding : 1%;
+			padding-left : 4%;
+			font-size : 200%;
+			font-weight : bold;
+			color: #565353;
+		}
+		#body-container .body-data{
+			width: 50%;
+			margin: 20px auto;
+			padding: 20px;
+			font-size: 1.2em;
+		}
+		#body-container .body-data .field-data{
+			text-align: center;
+			display: flex;
+			margin: 15px;
+		}
+		#body-container .body-data .field-key{
+			text-align: right;
+			width: 50%;
+			padding: 5px;
+		}
+	
+		.fa {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+		#body-container .body-data .fa fa-user{
+			margin: 8px;
+			width: 5%;
+		}
+		#body-container .body-data  .field-data .field-data-input{
+			border-radius: 4px;
+			flex: 1;
+			display: inline-block;
+		}
+		#body-container .body-data  .field-data .field-data-input #ques-hosting{
+			width : 26%;
+			height : 22%;
+			margin-left : -69%;
+		}
+		
+		#body-container .body-data .field-data .field-content{
+			margin-left: 50px;
+			border: solid 1px #b3b3b3;
+			border-radius: 4px;
+			width: 100%;
+			display: flex;
+			height : 2%;
+		}
+		#input-radio{
+			border:none !important;
+		}
+		
+		#body-container .body-data .field-data .field-content .fa{
+			margin: 8px;
+			width: 5%;
+		}	
+		.fa-user:before {
+			content: "\f007";
+		}
+		input, select, textarea{
+			border: solid 2px #fff;
+			border-left: solid 1px #b3b3b3;
+			padding: 10px 8px 5px 0;
+			border-radius: 4px;
+			width:100%; 
+			display: inline-block;
+			padding-left: 10px;
+		}
+		
+		.field-data-input button{
+			background-color: orange;
+			border: solid 1px #d68f2a;
+			border-radius: 5px; 
+			margin-top: 10px;
+			color: white; 
+			font-weight: bold;
+			padding: 5px;
+		}
+		#send-button{
+			text-align: left;
+			border: none !important;	
+		}
+		input:invalid,select:invalid,textarea:invalid{
+			border: 2px solid red;
+		}
+		input:placeholder-shown,textarea:placeholder-shown{
+			border:none;
+		}

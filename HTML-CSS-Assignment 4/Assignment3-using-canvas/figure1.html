@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<body>
+	<canvas id="figure1" width="300" height="300" >
+	</canvas>
+	<script>
+	var canvas = document.getElementById("figure1");
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(205,150,60,0,2*Math.PI);
+	ctx.fillStyle = "blue";
+	ctx.fill();
+	</script>
+</body>
