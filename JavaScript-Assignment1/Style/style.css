@@ -1,0 +1,12 @@
+#contactForm td{
+	display: flex;
+}
+#contactForm span{
+	display: none;
+	z-index: -3;
+	position: absolute;
+	width: 100%;
+    padding-left: 81%;
+    margin: -20px 0px 14px 5px;
+    text-align: right;
+}
