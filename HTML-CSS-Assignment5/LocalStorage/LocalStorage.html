@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            LocalStorageDemo
+        </title>
+    </head>
+    <body>
+        <p>Hello <span id="nameOfUser"></span></p>
+        <input type="text" placeholder="Enter your name" id="textbox"/><br/><br/>
+        <input type="button" value="Save Name" onclick="saveToStore()" /><br/><br/>
+        <input type="button" value="Get Name From Local Storage" onclick="getStore()" />
+    </body>
+    <script>
+        var name=localStorage.getItem("username");
+        
+        if(!(name==null)){
+            document.getElementById("nameOfUser").innerHTML = name;
+        }
+            
+        function getStore(){
+        var msg=document.getElementById("nameOfUser");	
+        msg.innerHTML = localStorage.getItem("username");
+        }
+        
+        function saveToStore(){
+            var textbox=document.getElementById("textbox");
+            localStorage.setItem("username",textbox.value);
+            textbox.value="";
+        }
+    </script>
+</html>
