@@ -1,0 +1,55 @@
+<html>
+<head>
+	<style>
+		#first,#second,#third,#fourth,#fifth{
+			height : 100px;
+			width : 100px;
+			background : red;
+			float : left;
+			margin : 20px;
+			transition : 0.6s;
+		}
+		#first:hover{
+			transform:rotate(360deg);
+			background:green;	
+		}
+		#second:hover{
+			transform:scale(2,2);
+			background:green;	
+		}
+		#third:hover{
+			transform:skew(30deg,0);
+			background:green;
+		}
+		#fourth:hover{
+			transform:translate(100px, 20px);
+			background:green;	
+		}
+		#fifth:hover{
+			border-radius:50%;
+			background:green;
+		}
+		h4{
+			margin-top : 35%;
+			text-align : center;
+		}
+	</style>
+</head>
+<body>
+	<div id="first">
+		<h4> Rotate</h4>
+	</div>
+	<div id="second">
+		<h4> Scale</h4>
+	</div>
+	<div id="third">
+		<h4> Skew</h4>
+	</div>
+	<div id="fourth">
+		<h4> Translate</h4>
+	</div>
+	<div id="fifth">
+		<h4> Border </h4>
+	</div>
+</body>
+</html>
