@@ -6,20 +6,21 @@ function Queue(){
 	this.head=null;
 	this.length=0;
 	this.enqueue=function(value){
-		value=value.replace(/\s/g, '');
-		value=value.trim();
-		var node=new Node(value);
-		if(value!=""){
-			var presentNode=this.head;
-			if(!presentNode){
-				this.head=node;
-				this.length++;
-			}else{
-				while(presentNode.next){
-					presentNode=presentNode.next;
+		if(value){
+			value=value.trim();
+			if(value!=""){
+				var node=new Node(value);
+				var presentNode=this.head;
+				if(!presentNode){
+					this.head=node;
+					this.length++;
+				}else{
+					while(presentNode.next){
+						presentNode=presentNode.next;
+					}
+					presentNode.next=node;
+					this.length++;
 				}
-				presentNode.next=node;
-				this.length++;
 			}
 		}
 		return this.head;
@@ -28,6 +29,7 @@ function Queue(){
 	this.dequeue=function(){
 		if(this.head){
 			this.head=this.head.next;
+			this.length--;
 		}
 		return this.head;
 	}

@@ -2,7 +2,8 @@ var finalString;
 function input(){
 	var string=document.getElementById("inputString").value;
 	document.getElementById("print").innerHTML="Input String: "+string;
-	if(string.trim()==""){
+	string=string.trim();
+	if(string==""){
 		document.getElementById("print").innerHTML="Please Enter the String";
 	}else{
 		var length=string.length;
@@ -32,8 +33,12 @@ function input(){
 
 function print(){
 	var loop;
-	document.getElementById("printString").innerHTML="";
-	for(loop=0; loop<finalString.length; loop++){
+	document.getElementById("printString").innerHTML="Resultant String: ";
+	if(finalString==""){
+		document.getElementById("printString").innerHTML+="Empty";
+	}else{
+		for(loop=0; loop<finalString.length; loop++){
 		document.getElementById("printString").innerHTML+=finalString.charAt(loop);
+		}
 	}
 }

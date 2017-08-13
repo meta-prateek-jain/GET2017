@@ -7,21 +7,22 @@ function DoublyLinkedList(){
 	this.head=null;
 	this.length=0;
 	this.addValueToList=function(value){
-		value=value.replace(/\s/g, '');
-		value=value.trim();
-		var node=new Node(value);
-		var presentNode=this.head;
-		if(value!=""){
-			if(!presentNode){
-				this.head=node;
-				this.length++;
-			}else{
-				while(presentNode.next){
-					presentNode=presentNode.next;
+		if(value){
+			value=value.trim();
+			var node=new Node(value);
+			var presentNode=this.head;
+			if(value!=""){
+				if(!presentNode){
+					this.head=node;
+					this.length++;
+				}else{
+					while(presentNode.next){
+						presentNode=presentNode.next;
+					}
+					node.previous=presentNode;
+					presentNode.next=node;
+					this.length++;
 				}
-				node.previous=presentNode;
-				presentNode.next=node;
-				this.length++;
 			}
 		}
 		return this.head;
@@ -32,8 +33,8 @@ function DoublyLinkedList(){
 		var loop=1;
 		var pattern=/^[0-9]*$/;
 		var temp;
-		position=position.trim();
-		if(presentNode!=null){
+		if(presentNode!=null && position){
+			position=position.trim();
 			if(position==""){
 				document.getElementById("error").innerHTML="Please Enter the value";
 			}
@@ -44,21 +45,23 @@ function DoublyLinkedList(){
 				document.getElementById("error").innerHTML="Please enter the correct index value";
 			}
 			else if(position==1){
-				document.getElementById("error").innerHTML="";
+				document.getElementById("error").innerHTML="Value at index "+position+" is removed";
 				temp=presentNode.next;
-				temp.previous=null;
 				this.head=temp;
+				temp.previous=null;
 				this.length--;
 			}else{
 				while((loop+2)<position){
 					presentNode=presentNode.next;
 					loop++;			
 				}
-				document.getElementById("error").innerHTML="";
+				document.getElementById("error").innerHTML="Value at index "+position+" is removed";
 				temp=presentNode.next;
-				temp=temp.next;
-				temp.previous=presentNode;
-				presentNode.next=temp;
+				presentNode.next=temp.next;
+				if(temp.next!=null){
+					temp=temp.next;
+					temp.previous=presentNode;
+				}
 				this.length--;
 			}
 		}
@@ -82,13 +85,13 @@ function DoublyLinkedList(){
 	this.searchValuePosition=function(value){
 		var presentNode=this.head;
 		var position=1;
-		value=value.trim();
-		if(presentNode!=null){
-			if(value.trim()==""){
+		if(presentNode!=null && value){
+			value=value.trim();
+			if(value==""){
 				document.getElementById("error").innerHTML="Please Enter the value";
 			}
 			else if(presentNode.value==value){
-				document.getElementById("error").innerHTML="The value is At "+position;
+				document.getElementById("error").innerHTML="The "+value+" is At "+position;
 			}else{
 				while(presentNode.value!=value){
 					if(presentNode.next==null){
@@ -101,7 +104,7 @@ function DoublyLinkedList(){
 				if(position==0){
 					document.getElementById("error").innerHTML="The value is Not Found."
 				}else{
-					document.getElementById("error").innerHTML="The value is At "+position;
+					document.getElementById("error").innerHTML="The "+value+" is At "+position;
 				}
 			}
 		}

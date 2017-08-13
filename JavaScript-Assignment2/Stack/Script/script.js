@@ -6,25 +6,27 @@ function Stack(){
 	this.head=null;
 	this.length=0;
 	this.pushToStack=function(value){
-		value=value.replace(/\s/g, '');
-		value=value.trim();
-		var node=new Node(value);
-		if(value!=""){
-			if(!this.head){
-				this.head=node;
-				this.length++;
-			}else{
-				node.next=this.head
-				this.head=node;
-				this.length++;
+		if(value){
+			value=value.trim();
+			if(value!=""){
+				var node=new Node(value);
+				if(!this.head){
+					this.head=node;
+					this.length++;
+				}else{
+					node.next=this.head
+					this.head=node;
+					this.length++;
+				}
 			}
 		}
-		return this.head;
+	return this.head;
 	}
 
 	this.popFromStack=function(){
 		if(this.head){
 			this.head=this.head.next;
+			this.length--;
 		}
 		return this.head;
 	}
