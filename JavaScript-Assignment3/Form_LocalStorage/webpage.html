@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>HTML Assignment 1</title>
+</head>
+<body width="80%" style="padding: 0 20% 0 20%">
+	<!-- table for top header icon and navigation links-->
+	<table width="100%" align="center">
+		<tr>
+			<td><img src ="logo.png" height="60" width="60" ></td>
+			<td  align="right">
+				<a href="#" onclick="goTo()" id="home">Home</a>
+				<a href="" onclick="goTo()">About</a>
+				<a href="" onclick="goTo()">Product</a>
+				<a href="" onclick="goTo()">Gallery</a>
+				<a href="#" onclick="goTo()" id="contact">Contact</a>
+			</td>
+		</tr>
+	</table>
+	<hr>
+	<!-- table for center cover photo-->
+	<table width="100%">
+		<tr>
+			<td align="center" ><img src ="cover.png" width="80%"></td>
+		</tr>
+	</table>
+	<br>
+	<!-- table for Body content-->
+	<table width=80%  align="center">
+		<tr>
+			<th align="center" ><h1>What is HTML ?</h1></th>
+		</tr>
+		<tr>
+			<td align="center" >
+				<p align="justify">
+					Hypertext Markup Language (HTML) is the standard markup language for creating web pages 
+					and web applications. With Cascading Style Sheets (CSS) and JavaScript it forms a 
+					triad of cornerstone technologies for the World Wide Web.[1] Web browsers receive HTML 
+					documents from a webserver or from local storage and render them into multimedia web pages.
+					HTML describes the structure of a web page semantically and originally included cues for 
+					the appearance of the document.
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p align="justify">
+					HTML elements are the building blocks of HTML pages. With HTML constructs, images and 
+					other objects such as interactive forms, may be embedded into the rendered page. 
+					It provides a means to create structured documents by denoting structural semantics
+					for text such as headings, paragraphs, lists, links, quotes and other items. 
+					 HTML elements are delineated by tags, written using angle brackets. 
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<!-- For body content table -->
+	<table width="80%" align="center">
+		<tr>
+			<th align="center" colspan="3"><h1>How it works ?</h1></th>
+		</tr>
+		<tr align="center">
+			<td><img src ="logo.png" width="80%"></td>
+			<td><img src ="logo.png" width="80%"></td>
+			<td><img src ="logo.png" width="80%"></td>
+		</tr>
+		<tr align="center">
+			<td><b>Development</td>
+			<td><b>Elements</td>
+			<td><b>Data Types</td>
+		</tr>
+		<tr>
+			<td align="center" >
+				<p align="center">
+					In 1980, physicist Tim Berners-Lee, a contractor at CERN, proposed and prototyped ENQUIRE,
+					a system for CERN researchers to use and share documents. In 1989, Berners-Lee wrote a memo 
+					proposing an Internet-based hypertext system.Berners-Lee specified HTML and wrote the 
+					browser and server software in late 1990.
+				</p>
+			<td align="center">
+				<p align="center">
+					HTML documents imply a structure of nested HTML elements. These are indicated in the document 
+					by HTML tags, enclosed in angle brackets thus:. In the simple, general case, the extent 
+					of an element is indicated by a pair of tags: a "start tag" and "end tag" . 
+					The text content of the element, if any, is placed between these tags.
+				</p>
+			<td align="center">
+				<p align="center">
+					HTML defines several data types for element content, such as script data and stylesheet data, 
+					and a plethora of types for attribute values, including IDs, names, URIs, numbers, units of 
+					length, languages, media descriptors, colors, character encodings, dates and times, and so on.
+					All of these data types are specializations of character data.
+				</p>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<br>
+	<hr>
+	<!-- table for footer data -->
+	<table align="center">
+		<tr>
+			<td > &copy;Copyright 2016-17 | All Rights Reserved | Metacube Training
+			</td>
+		</tr>
+	</table>
+	<script>
+		function goTo(){
+				document.getElementById("home").href="webpage.html";
+				document.getElementById("contact").href="contact.html";
+		}
+	</script>
+</body>
+</html>
