@@ -179,7 +179,7 @@ public class EditProfile {
 		System.out.println("Are you sure .?? Y/N");
 		String answer = scan.next();
 		if ("Y".equalsIgnoreCase(answer)) {
-			System.out.println("Removed");
+			//System.out.println("Removed");
 			status = true;
 		}
 		return status;
