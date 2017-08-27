@@ -39,6 +39,9 @@ public class Guest {
 		this.age = age;
 	}
 
+	/**
+	 * Method is used to print the details the guest 
+	 */
 	@Override
 	public String toString(){
 		return "Name : "+this.getName()+" ---> Age : "+this.getAge();

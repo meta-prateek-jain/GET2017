@@ -1,7 +1,7 @@
-package com.metacube.printjob.heap;
+package com.metacube.printjob.util;
 
 /**
- * Class is used to get the priority index 
+ * Class is used to get the priority index
  * 
  * @author Prateek Jain
  *
@@ -9,13 +9,15 @@ package com.metacube.printjob.heap;
 public class Priority {
 
 	/**
-	 * Method is returning the priority index according the department 
+	 * Method is returning the priority index according the department
+	 * 
 	 * @param department
 	 * @return
 	 */
-	public static int get(String department){
+	public static int get(String department) {
 		int priority;
-		switch(department){
+		// switch case set the priority according to the department
+		switch (department) {
 		case "chairman":
 			priority = 4;
 			break;
