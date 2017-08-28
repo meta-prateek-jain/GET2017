@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//src/com/metacube/SoapServer/FahrenheitToCelsius.java=UTF-8
+encoding//src/com/metacube/SoapServer/FahrenheitToCelsiusService.java=UTF-8
+encoding//src/com/metacube/SoapServer/FahrenheitToCelsiusServiceLocator.java=UTF-8
+encoding//src/com/metacube/SoapServer/FahrenheitToCelsiusSoapBindingStub.java=UTF-8
