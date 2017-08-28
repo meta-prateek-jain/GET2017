@@ -1,0 +1,87 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>JavaScript Assignment 3</title>
+	<link rel="stylesheet" type="text/css" href="Style/style.css">
+	<script src="Script/script.js"></script>
+</head>
+<body>
+	<span>
+		<table width="100%" align="center">
+			<tr>
+		<!-- table for top header icon and navigation links-->
+				<td><img src ="logo.png" height="60" width="60" ></td>
+				<td  align="right">
+					<a href="" onclick="goTo()" id="home">Home</a>
+					<a href="">About</a>
+					<a href="">Product</a>
+					<a href="">Gallery</a>
+					<a href="" onclick="goTo()" id="contact">Contact</a>
+				</td>
+			</tr>
+		</table>
+		<hr>
+		<!-- table for body cover photo-->
+		<table width="100%">
+			<tr>
+				<td align="center" ><img src ="contact.png" width="50%"></td>
+			</tr>
+		</table>
+		<br>
+		<!-- table for form data-->
+		<table width="15%" align="center" id="form-table" >
+			<form name="contactForm" id="contactForm" onsubmit="return validateForm()" autocomplete="off">
+				<tr>
+					<td align="center" >Name</td>
+					<td align="justify" ><input type="text" id="name" onkeyup="validateName()" /></td>
+				</tr>
+				<tr>
+					<td align="center">Email</td>
+					<td align="justify"><input type="text" id="email" onkeyup="validateEmail()"/></td>
+				</tr>
+				<tr>
+					<td align="center">City</td>
+					<td align="justify">
+						<select id="city" onchange="validateSelect()" style="width:100%">
+							<option value="0" selected="selected" hidden>Please Select the city.</option>
+							<option value="Jaipur">Jaipur</option>
+							<option value="Ajmer">Ajmer</option>
+							<option value="Kota">Kota</option>
+							<option value="Udaipur">Udaipur</option>
+							<option value="Tonk">Tonk</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td align="center">Organization Name</td>
+					<td align="justify"><input type="text" id="organization" onkeyup="validateOrganization()"/></td>
+				</tr>
+				<tr>
+					<td align="center">Contact Number</td>
+					<td align="justify"><input type="text" id="phone" onkeyup="validateContact()"/></td>
+				</tr>
+				<tr>
+					<td align="center">Message</td>
+					<td align="justify"><textarea name="message" id="message" style="resize:vertical; width: 100%;" oninput="validateMessage()"></textarea></td>
+				</tr>
+				<tr>
+					<td align="center"><input type="submit" value="Submit"></td>
+					<td><input type="button" id="resubmission" value="Clear" onclick="clearlocalStorage()"></td>
+				</tr>
+			</form>
+		</table>
+		<br>
+		<hr>
+		<!-- table for footer data -->
+		<table align="center">
+			<tr>
+				<td > &copy;Copyright 2016-17 | All Rights Reserved | Metacube Training
+				</td>
+			</tr>
+		</table>
+		<script src="Script/script.js">
+			
+		</script>
+	</span>
+</body>
+</html> 
