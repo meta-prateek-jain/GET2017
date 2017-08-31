@@ -1,0 +1,12 @@
+1,Aman,10
+2,raman,8
+3,harman,12
+4,gaurav,5
+5,rohit,3
+6,garvit,7
+7,arpit,2
+8,shubham,1
+9,archit,4
+10,prashant,11
+11,umang,9
+12,harshit,6
