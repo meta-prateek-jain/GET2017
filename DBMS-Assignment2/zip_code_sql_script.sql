@@ -1,33 +1,46 @@
+-- Drop the database if exists
+DROP DATABASE IF EXISTS form;
+
 -- Creating the database
-CREATE DATABASE IF NOT EXISTS form;
+CREATE DATABASE form;
 
 -- using the database
 USE form;
 
 -- creating required tables
-CREATE TABLE IF NOT EXISTS states (
-     name VARCHAR(100) PRIMARY KEY
+CREATE TABLE states (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS cities (
-    name VARCHAR(100) PRIMARY KEY
+CREATE TABLE city (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
     
-CREATE TABLE IF NOT EXISTS zip_code (
-    code INT NOT NULL PRIMARY KEY,
-    state_name VARCHAR(100),
-    city_name VARCHAR(100),
-    CONSTRAINT fk_state_name FOREIGN KEY(state_name) REFERENCES states(name) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT fk_city_name FOREIGN KEY(city_name) REFERENCES cities(name) ON DELETE CASCADE ON UPDATE CASCADE
+CREATE TABLE zipcode_information (
+    code INT PRIMARY KEY,
+    state_id INT,
+    city_id INT,
+    CONSTRAINT fk_state_id FOREIGN KEY(state_id) REFERENCES states(id) ON DELETE CASCADE,
+    CONSTRAINT fk_city_id FOREIGN KEY(city_id) REFERENCES city(id) ON DELETE CASCADE
 );
 
 -- Inserting the sample data
 INSERT INTO states(name) VALUES ('RAJASTHAN'),('ANDHRA PRADESH'),('ASSAM'),('BIHAR');
-INSERT INTO cities(name) VALUES ('Banswara'),('Dungarpur'),('Jaipur'),('Godavari'),('Nellore'),('Nagaon'),('Diphu'),('Patna'),('Gaya');
-INSERT INTO zip_code(code,city_name,state_name) VALUES (327001,'Banswara','RAJASTHAN'),(314001,'Dungarpur','RAJASTHAN'),(302016,'Jaipur','RAJASTHAN'),(533260,'Dungarpur','ANDHRA PRADESH'),(524414,'Nellore','ANDHRA PRADESH'),(782001,'Nagaon','ASSAM'),(782447,'Diphu','ASSAM'),(804453,'Patna','BIHAR'),(804428,'Gaya','BIHAR');
+INSERT INTO city(name) VALUES ('Banswara'),('Dungarpur'),('Jaipur'),('Godavari'),('Nellore'),('Nagaon'),('Diphu'),('Patna'),('Gaya');
+INSERT INTO zipcode_information(code,city_id,state_id) VALUES (327001,1,1),(314001,2,1),(302016,3,1),(533260,4,2),(524414,5,2),(782001,6,3),(782447,7,3),(804453,8,4),(804428,9,4);
 
 -- SELECT command to display Zip Code, City Names and States ordered by State Name and City Name.
-SELECT code AS 'ZIP CODE',city_name AS 'CITY NAMES', state_name AS 'STATES' FROM zip_code ORDER BY state_name,city_name;
+SELECT code AS 'Zip code',c.name AS 'City', s.name AS 'State' 
+FROM zipcode_information 
+JOIN city c ON city_id = c.id 
+JOIN states s ON state_id = s.id 
+ORDER BY s.name,c.name;
 
 -- SELECT command to display Zip Code, City Names and States ordered by State Name and City Name for particular zip-code.
-SELECT code AS 'ZIP CODE',city_name AS 'CITY NAMES', state_name AS 'STATES' FROM zip_code WHERE code = 327001 ORDER BY state_name,city_name;
+SELECT code AS 'Zip code',c.name AS 'City', s.name AS 'State' 
+FROM zipcode_information 
+JOIN city c ON city_id = c.id 
+JOIN states s ON state_id = s.id 
+WHERE code = 327001;
