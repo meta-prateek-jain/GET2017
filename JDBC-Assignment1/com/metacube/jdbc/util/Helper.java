@@ -23,6 +23,7 @@ public class Helper {
 	 */
 	private Helper() {
 		connection = MySQlConnection.establish();
+
 	}
 	/**
 	 * method is used to make the class singleton
@@ -52,13 +53,13 @@ public class Helper {
 	 * 		list of the titles
 	 * @throws SQLException
 	 */
-	public List<Title> fetchBooksWrittenByAuthor(String name) throws SQLException {
+	public List<Title> fetchBooksWrittenByAuthor(String name) {
 		List<Title> titlesList = new ArrayList<Title>();
 		String query = "SELECT titles.name AS 'Title'"
 				+ " FROM authors"
-				+ " JOIN titles ON titles.id = "
-				+ " (SELECT ta.title_id FROM title_author ta  WHERE ta.author_id = authors.id) "
-				+ "WHERE LOWER(authors.name) = LOWER(?);";
+				+ " JOIN titles ON titles.id ="
+				+ " (SELECT ta.title_id FROM title_author ta  WHERE ta.author_id = authors.id)"
+				+ " WHERE LOWER(authors.name) = LOWER(?);";
 		try {
 			statement = connection.prepareStatement(query);
 			statement.setString(1, name);
@@ -70,12 +71,7 @@ public class Helper {
 				titlesList.add(title);
 			}
 		} catch (SQLException sqle) {
-			System.err.print("Error in transaction");
-		} finally {
-			// if statement object is not null then close it
-			if (statement != null) {
-				statement.close();
-			}
+			System.err.print("Error in transaction: "+sqle.getMessage());
 		}
 		return titlesList;
 	}
@@ -89,11 +85,13 @@ public class Helper {
 	 * 		flag value if -1 then book is not available in library else if 0 then book can't be issued else book can be issued
 	 * @throws SQLException
 	 */
-	public int isBookIssued(String name) throws SQLException {
+	public int isBookIssued(String name) {
 		int flag = -1;
-		String query = "SELECT titles.id"
+		String query = "SELECT books.accession_no"
+				+ " FROM books"
+				+ " WHERE books.title_id IN (SELECT titles.id"
 				+ " FROM titles"
-				+ " WHERE LOWER(titles.name) = LOWER(?);";
+				+ " WHERE LOWER(titles.name) = LOWER(?));";
 		try {
 			statement = connection.prepareStatement(query);
 			statement.setString(1, name);
@@ -129,12 +127,7 @@ public class Helper {
 				}
 			}
 		} catch (SQLException sqle) {
-			System.err.print("Error in transaction");
-		} finally {
-			// if statement object is not null then close it
-			if (statement != null) {
-				statement.close();
-			}
+			System.err.print("Error in transaction: "+sqle.getMessage());
 		}
 		return flag;
 	}
@@ -146,21 +139,30 @@ public class Helper {
 	 * 		number of rows deleted
 	 * @throws SQLException
 	 */
-	public int deleteBooksNotIssuedSinceLastYear() throws SQLException {
-		String query = "DELETE FROM books WHERE books.accession_no NOT IN "
-				+ "(SELECT accession_no FROM book_issue WHERE TIMESTAMPDIFF(YEAR, issue_date, NOW()) < 1 );";
+	public int deleteBooksNotIssuedSinceLastYear() {
+		String query = "DELETE FROM books WHERE books.accession_no NOT IN"
+				+ " (SELECT accession_no FROM book_issue WHERE TIMESTAMPDIFF(YEAR, issue_date, NOW()) < 1 );";
 		int rowsAffected = 0;
 		try {
 			statement = connection.prepareStatement(query);
 			rowsAffected = statement.executeUpdate();
 		} catch (SQLException sqle) {
-			System.err.println("Error in transaction");
-		} finally {
-			// if statement object is not null then close it
-			if (statement != null) {
-				statement.close();
-			}
-		}
+			System.err.println("Error in transaction: "+sqle.getMessage());
+		} 
 		return rowsAffected;
+	}
+	/**
+	 * Method is used to check connection established or not
+	 * 
+	 * @return
+	 * 		true if connection established else false
+	 */
+	public boolean isConnectionEstablished() {
+		boolean flag = true;
+		// if connection is not established, i.e. connection object is null then set flag = false
+		if(connection == null) {
+			flag = false;
+		}
+		return flag;
 	}
 }

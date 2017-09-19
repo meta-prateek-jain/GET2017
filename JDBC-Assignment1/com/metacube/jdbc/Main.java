@@ -1,6 +1,5 @@
 package com.metacube.jdbc;
 
-import java.sql.*;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -45,8 +44,9 @@ public class Main {
 	 * 		arguments taken through console
 	 */
 	public static void main(String[] args) {
-		try {
-			Helper helper = Helper.getInstance();
+		Helper helper = Helper.getInstance();
+		// if connection is established then continue
+		if(helper.isConnectionEstablished()) {
 			int choice;
 			// loop continue till exit choice is selected
 			while(true) {
@@ -69,11 +69,16 @@ public class Main {
 					scan.nextLine();
 					System.out.println("Enter the name of author :");
 					name = scan.nextLine();
+					// loop continue until user enter something
+					while(name.trim().length() == 0) {
+						System.out.println("Please enter something: ");
+						name = scan.nextLine();
+					}
 					name = name.trim();
 					List<Title> titlesList = helper.fetchBooksWrittenByAuthor(name);
 					/*
 					 * if list size is greater than zero then display the titles 
-					 * else display no book written message
+					 * else display no book published message
 					 */
 					if(titlesList.size() > 0){
 						System.out.println("Books Written by "+name+" are:");
@@ -90,6 +95,11 @@ public class Main {
 					scan.nextLine();
 					System.out.println("Enter the name of book :");
 					name = scan.nextLine();
+					// loop continue until user enter something
+					while(name.trim().length() == 0) {
+						System.out.println("Please enter something: ");
+						name = scan.nextLine();
+					}
 					name = name.trim();
 					int flag = helper.isBookIssued(name);
 					/*
@@ -119,8 +129,6 @@ public class Main {
 					System.out.println("Invalid choice. Try again");
 				}
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
 		}
 	}	
 }

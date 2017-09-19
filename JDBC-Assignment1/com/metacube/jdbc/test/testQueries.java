@@ -12,6 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.metacube.jdbc.model.Title;
+import com.metacube.jdbc.util.Constants;
 import com.metacube.jdbc.util.Helper;
 import com.metacube.jdbc.util.MySQlConnection;
 
@@ -21,7 +22,7 @@ import com.metacube.jdbc.util.MySQlConnection;
  * @author Prateek Jain
  *
  */
-public class testQueries {
+public class TestQueries {
 	private Helper helper;
 	/**
 	 * Method is used to set up the class object before start testing
@@ -32,10 +33,20 @@ public class testQueries {
 	}
 
 	/**
-	 * Test method to check connection established or not
+	 * Test method to check connection when password is wrong
 	 */
 	@Test
-	public void testConnectionEstablish() {
+	public void testConnectionWhenNotEstablish() {
+		Constants.setPASSWORD("11");
+		assertNull(MySQlConnection.establish());
+	}
+	
+	/**
+	 * Test method to check connection password is right
+	 */
+	@Test
+	public void testConnectionWhenEstablish() {
+		Constants.setPASSWORD("1234");
 		assertNotNull(MySQlConnection.establish());
 	}
 	/**
