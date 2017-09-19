@@ -33,20 +33,10 @@ public class TestQueries {
 	}
 
 	/**
-	 * Test method to check connection when password is wrong
-	 */
-	@Test
-	public void testConnectionWhenNotEstablish() {
-		Constants.setPASSWORD("11");
-		assertNull(MySQlConnection.establish());
-	}
-	
-	/**
 	 * Test method to check connection password is right
 	 */
 	@Test
 	public void testConnectionWhenEstablish() {
-		Constants.setPASSWORD("1234");
 		assertNotNull(MySQlConnection.establish());
 	}
 	/**

@@ -7,21 +7,7 @@ package com.metacube.jdbc.util;
  *
  */
 public class Constants {
-	public static String DB_NAME = "library_information_system";
-	public static String USER_ID = "root";
-	public static String PASSWORD = "1234";
-	
-	// setters
-	public static void setDB_NAME(String dbName) {
-		DB_NAME = dbName;
-	}
-
-	public static void setUSER_ID(String userId) {
-		USER_ID = userId;
-	}
-
-	public static void setPASSWORD(String password) {
-		PASSWORD = password;
-	}
-	
+	public static final String DB_NAME = "library_information_system";
+	public static final String USER_ID = "root";
+	public static final String PASSWORD = "1234";
 }
