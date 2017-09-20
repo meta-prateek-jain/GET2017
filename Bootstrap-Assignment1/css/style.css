@@ -5,6 +5,10 @@
     margin-bottom: 0px;
 }
 
+.navbar-header a {
+	text-decoration: none;
+}
+
 .navbar-inverse .navbar-toggle:focus {
 	background-color: #c36464;
 }
@@ -14,7 +18,7 @@
 	font-size:40px;
 }
 
-.nav>li>a:focus, .nav>li>a:hover {
+.menu-section .nav li a:focus, .menu-section .nav li a:hover {
 	background-color: #c36464;
 }
 
@@ -46,7 +50,7 @@
     text-transform: uppercase;
 }
 
-.active {
+.menu-section .active {
 	background-color: #c36464;
 }
 
@@ -56,6 +60,14 @@
     padding-bottom: 60px;
 }
 
+.same-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+.same-height > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
 .page-head {
 	font-weight: 900;
     padding-bottom: 20px;
@@ -63,7 +75,7 @@
     text-transform: uppercase;
     color: #c36464;
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .dashboard-div-wrapper {
@@ -75,7 +87,7 @@
 }
 
 .dashboard-div-wrapper .progress {
-        height: 2px;
+    height: 2px;
 }
 
 .dashboard-div-icon {
@@ -109,8 +121,21 @@
     border-radius: 0px;
 }
 
+.notice-board .panel .panel-body a {
+	text-decoration: none;
+}
+
+.notice-board .panel .panel-body a .label {
+	border-radius: 0px;
+}
+
 .notice-board .panel .panel-footer {
     padding: 10px 9px;
+}
+
+.notice-board .panel .panel-footer a {
+	border-radius: 0px;
+    white-space: normal;
 }
 
 .notice-board ul {
@@ -131,6 +156,8 @@
 .btn-social {
     color: white;
     margin-bottom: 2px;
+    border-radius: 0px;
+    width: 122px;
 }
 
 .btn-social:hover {
@@ -157,6 +184,7 @@
 	border-radius: 0px;
 	font-size: 12px;
 	margin-bottom: 2px;
+	width: 150px;
 }
 
 footer {
