@@ -1,0 +1,46 @@
+<div class="container">
+    <product-search class="pull-right searching-box"></product-search>
+</div>
+<div class="products-header">
+    <div class="title">
+        <h2>Products List</h2>
+    </div>
+    <div class="addbutton">
+        <button class="btn btn-success" (click)="addProduct();">Add Product</button>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of products | slice:1" [class.selected]="product === selectedProduct">
+            <div class="card text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a [routerLink]="['/product', product.id]">
+                            <h4 class="card-title">{{product.name}}</h4>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <span>Rs. {{product.price}}</span>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="edit btn btn-warning" [routerLink]="['/products', product.id]">Edit</button>
+                        <button class="delete btn btn-danger" (click)="delete(product); $event.stopPropagation()">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 
+<ul class="products">
+  <li *ngFor="let product of products | slice:1" [class.selected]="product === selectedProduct">
+    <span class="badge">{{product.id}}</span>
+    <a [routerLink]="['/product', product.id]">{{product.name}}</a>
+    <button class="edit"
+    [routerLink]="['/products', product.id]">edit</button> 
+    <button class="delete"
+    (click)="delete(product); $event.stopPropagation()">delete</button>
+  </li>
+</ul> -->
