@@ -1,0 +1,29 @@
+.heading {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: cadetblue;
+    color: chocolate;
+    font-family: cursive;
+}
+
+.navigation-icon {
+    background-color: #000;
+}
+
+.navigation-icon .icon-bar {
+    background: cadetblue;
+}
+
+.menu-section {
+    background-color: #000;
+}
+
+#menu-bar li a.active {
+    color: cadetblue;
+    background-color: transparent;
+}
+
+#menu-bar li a, #menu-bar li a:active, #menu-bar li a:hover {
+    color: grey;
+    background-color: transparent;
+}
