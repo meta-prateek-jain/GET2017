@@ -1,0 +1,13 @@
+html {
+    overflow-y: scroll;
+  }
+
+html, body {
+    overflow-x: hidden;
+}
+
+.searching-box {
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}

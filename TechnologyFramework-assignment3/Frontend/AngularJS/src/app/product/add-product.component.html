@@ -1,0 +1,24 @@
+<div class="container" style="text-align: center;">
+    <div>
+        <h3>Add New Product</h3>
+    </div>
+    <hr>
+    <div class="row">
+        <form role="form" style="margin: auto;">
+            <div class="form-group">
+                <label>Enter Product Name : </label>
+                <input #productName type="text" class="form-control" placeholder="e.g.: Puma T-shirt" />
+            </div>
+            <div class="form-group">
+                <label>Enter Product Price : </label>
+                <input #productPrice type="text" class="form-control" placeholder="e.g.: 1200" />
+            </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="container">
+            <button class="btn btn-warning" (click)="goBack()">Back</button>&nbsp;
+            <button class="btn btn-success" (click)="add(productName.value, productPrice.value); productName.value=''; productPrice.value=''">Add</button>
+        </div>
+    </div>
+</div>
