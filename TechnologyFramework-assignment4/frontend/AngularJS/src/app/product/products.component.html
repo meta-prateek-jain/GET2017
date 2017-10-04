@@ -1,0 +1,51 @@
+<div class="container">
+    <product-search class="pull-right searching-box"><span class="glyphicon glyphicon-plus"></span></product-search>
+</div>
+<div class="container">
+    <div class="products-header">
+        <div class="title">
+            <h2>Products List</h2>
+        </div>
+        <div class="addbutton">
+            <button class="btn btn-success" (click)="addProduct();"><span class="glyphicon glyphicon-plus"></span>Add Product</button>
+        </div>
+    </div>
+</div>
+<div *ngIf="products.length < 1" style="text-align: center;">
+    <h2>Products list is empty.</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4" *ngFor="let product of products | slice:1" [class.selected]="product === selectedProduct">
+            <div class="card text-center">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a [routerLink]="['/product', product.id]">
+                            <h4 class="card-title">{{product.name}}</h4>
+                        </a>
+                    </div>
+                    <div class="panel-body">
+                        <span>Rs. {{product.price}}</span>
+                    </div>
+                    <div class="panel-footer">
+                        <button class="edit btn btn-warning" [routerLink]="['/products', product.id]"><span class="glyphicon glyphicon-pencil"></span>Edit</button>
+                        <button class="delete btn btn-danger" href="#" data-toggle="modal" data-target="#deleteModal" (click)="onSelect(product)"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container delete-modal">
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-title"><h2>Are you sure .... ?</h2></div>
+                <div class="modal-body">
+                    <button class="delete btn btn-danger" (click)="delete(selectedProduct);" data-dismiss="modal"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+                    <button type="button" class="btn btn-info pull-right" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span>Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
