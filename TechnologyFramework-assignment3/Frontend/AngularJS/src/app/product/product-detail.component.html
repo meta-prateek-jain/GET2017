@@ -1,0 +1,33 @@
+<div class="product-detail">
+  <div *ngIf="product">
+    <h2>{{product.name}} details!</h2>
+    <table class="table-responsive">
+      <tr class="table">
+        <td><label class="detail-label">Id: </label></td>  
+        <td class="detail-value">{{product.id}}</td>
+      </tr>
+      <tr>
+        <td>
+            <label class="detail-label">Name: </label>
+        </td>
+        <td class="detail-value">
+          {{product.name}}
+        </td>
+      </tr>
+      <tr>
+          <td>
+              <label class="detail-label">Price: </label>
+          </td>
+          <td class="detail-value">
+            Rs. {{product.price}}
+          </td>
+        </tr>
+    </table>
+  </div>
+  <div *ngIf="!product">
+    <h2>Invalid product Id...!</h2>
+  </div>
+  <div>
+    <button (click)="goBack()" style="margin-left: -50px;">Back</button>
+  </div>
+</div>
