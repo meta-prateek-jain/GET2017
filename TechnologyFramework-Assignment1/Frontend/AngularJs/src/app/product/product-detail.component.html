@@ -1,0 +1,17 @@
+<div class="product-detail">
+  <div *ngIf="product">
+    <h2>{{product.name}} details!</h2>
+    <div>
+      <label>id: </label>{{product.id}}</div>
+    <div>
+      <label>name: </label> {{product.name}}
+    </div>
+    <div>
+      <label>price: </label> {{product.price}}
+    </div>
+    <button (click)="goBack()">Back</button>
+  </div>
+  <div *ngIf="!product">
+    <h2>Invalid product Id...!</h2>
+  </div>
+</div>
