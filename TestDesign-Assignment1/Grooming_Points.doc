@@ -1,10 +1,13 @@
 Grooming Points:
 
-Case 1:  Are account details already available or need to fetch again from user for refund?
-Case 2:  Refund on the basis of Status of the ticket of the passenger.
-Case 3:  Should also sent an mandotry confirmation message on mobile.
-Case 4:  Authentication code(OTP) should be send on cancellation of ticket to authenticate the user.
-Case 5:  The page should display list of all the booked tickets and a search option to search for the required ticket.
-Case 6:  Will refund be transferred to bank account only or can be transferred to wallet also? 
-Case 7:  Is the refund scheme same for all type of tickets(confirmed tickets, RAC, etc.)? 
-Case 8:  In case of multiple seats are booked via one PNR number and user wants to cancel only few of them but not the whole ticket.
+Point 1: Where to place the "Cancel Ticket" Button, globally (On home page) or locally (with the ticket to be cancelled).
+
+Point 2: If it is global button, then should we display the booked ticket list or take pnr no. of the ticket as input from user to cancel it.
+
+Point 3: Do we need to authenticate the user before refund transfer.
+
+Point 4: Do we need to send an email to user, if the cancellation failed.
+
+Point 5: If the train is delayed by some hours, then if a user wants to cancel the ticket then, is he applicable to get refund and if yes, then what percentage ?
+
+Point 6: If the train is cancelled due to some reason, then what percentage of amount should be refund to user.
