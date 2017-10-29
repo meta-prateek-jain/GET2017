@@ -1,0 +1,44 @@
+<my-app></my-app>
+<div class="container">
+    <br><br>
+    <div class="panel panel-warning">
+        <div class="panel-heading">
+            <h3>Enter Product Details</h3>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_name">Product Name * : </label>
+                            <input #formName type="text" name="name" class="form-control" placeholder="Enter Product Name " data-error="Product Name is required."
+                                required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="form_price">Price * : </label>
+                            <input #formPrice type="text" name="price" class="form-control" placeholder="Enter Product Price " data-error="Product Price is required."
+                                required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-success btn-send" (click)="add(formName.value,formPrice.value); 
+                                        formName.value='';formPrice.value=''">Add Product</button>
+                    </div>
+                    <br><br><br>
+                    <div class="col-md-12">
+                        <p class="text-muted" style="color:red"><strong>*</strong> These fields are required.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

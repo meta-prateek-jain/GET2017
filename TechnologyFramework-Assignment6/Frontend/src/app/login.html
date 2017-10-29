@@ -1,0 +1,41 @@
+
+
+   <body >
+       <div class="container">
+        <section>				
+               <div id="container_demo" >
+                    <div id="wrapper">
+					 <a class="hiddenanchor" id="tologin"></a>
+                       <div id="login" class="animate form">
+                           <form  action="" autocomplete="on"> 
+                               <h1>Log in</h1> 
+                               <p> 
+                                   <label for="username" class="uname" > Your email or username </label>
+                                   <input #username name="username" required="required" type="text" placeholder="myusername or mymail@mail.com"/>
+                               </p>
+                               <p> 
+                                   <label for="password" class="youpasswd" > Your password </label>
+                                   <input #password name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
+                               </p>
+                               <p class="keeplogin"> 
+                                   <input type="checkbox" name="loginkeeping" id="loginkeeping" value="loginkeeping" /> 
+                                   <label for="loginkeeping">Keep me logged in</label>
+                               </p>
+                               <button class="btn btn-primary" (click)= "login(username.value , password.value)" >login</button>
+                               <p class="change_link">
+                                   Not a member yet ?
+                                   <a href="">Join us</a>
+                               </p>
+                           </form>
+                           
+                       </div>
+   
+                   </div>
+                  
+               </div>
+               <div class ="well" *ngIf = "prompt" >
+                    <p  >Credentials are wrong</p>
+                 </div>  
+           </section>
+       </div>
+   </body>

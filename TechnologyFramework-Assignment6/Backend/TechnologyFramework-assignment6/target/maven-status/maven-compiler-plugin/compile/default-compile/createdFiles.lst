@@ -1,0 +1,15 @@
+com\metacube\shoppingcart\dao\product\ProductDao.class
+com\metacube\shoppingcart\service\ProductService.class
+com\metacube\shoppingcart\service\DefaultProductService.class
+com\metacube\shoppingcart\enums\Status.class
+com\metacube\shoppingcart\dao\AbstractDao.class
+com\metacube\shoppingcart\dao\product\HibernateProductDao.class
+com\metacube\shoppingcart\facade\DefaultProductFacade.class
+com\metacube\shoppingcart\dto\ProductDto.class
+com\metacube\shoppingcart\dao\HibernateJdbcDao.class
+com\metacube\shoppingcart\controller\ProductController.class
+com\metacube\shoppingcart\spring\ShoppingCartConfiguration.class
+com\metacube\shoppingcart\spring\ApplicationContextFactory.class
+com\metacube\shoppingcart\model\Product.class
+com\metacube\shoppingcart\facade\ProductFacade.class
+com\metacube\shoppingcart\dao\JdbcConnectionFactory.class
