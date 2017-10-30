@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="36641" started-at="2017-10-11T15:51:08Z" finished-at="2017-10-11T15:51:44Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="36641" started-at="2017-10-11T15:51:08Z" finished-at="2017-10-11T15:51:44Z">
+      <class name="com.metacube.testautomation.TestWebPage">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.metacube.testautomation.TestWebPage@178f375]" name="setUp" is-config="true" duration-ms="17554" started-at="2017-10-11T21:21:08Z" finished-at="2017-10-11T21:21:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testCreateAccount()[pri:1, instance:com.metacube.testautomation.TestWebPage@178f375]" name="testCreateAccount" duration-ms="11831" started-at="2017-10-11T21:21:25Z" finished-at="2017-10-11T21:21:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateAccount -->
+        <test-method status="PASS" signature="testForgotPassword()[pri:2, instance:com.metacube.testautomation.TestWebPage@178f375]" name="testForgotPassword" duration-ms="5774" started-at="2017-10-11T21:21:37Z" finished-at="2017-10-11T21:21:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testForgotPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.metacube.testautomation.TestWebPage@178f375]" name="tearDown" is-config="true" duration-ms="1425" started-at="2017-10-11T21:21:43Z" finished-at="2017-10-11T21:21:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.metacube.testautomation.TestWebPage -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
