@@ -1,0 +1,15 @@
+Test Coverage Scenarios:
+
+TC#1 - Verify that a ‘cancel ticket’ button is displayed for each confirmed booked ticket.
+TC#2 - Verify that a successful cancellation mail is sent to the user.
+TC#3 - Verify that user is able to Click on the cancel button.
+TC#4 - Verify that user is able to cancel single passenger from a ticket which is booked for multiple passengers.
+TC#5 - Verify that account details are available for refund.
+TC#6 - Verify that cancel button is not	displayed for unconfirmed tickets (Waitlist tickets).
+TC#7 - Verify that cancel button is not displayed if journey date < current date.
+TC#8 - Verify that no amount is refunded if ticket is cancelled on the same date as journey date.
+TC#9 - Verify that 70% of amount is refunded if ticket is cancelled 60 days prior to journey date.
+TC#10- Verify that 50% of amount is refunded if ticket is cancelled between 60-30 days prior to journey date.
+TC#11- Verify that 35% of amount is refunded if ticket is cancelled between 30-10 days prior to journey date.
+TC#12- Verify that 20% of amount is refunded if ticket is cancelled between 10-1 day prior to journey date.
+

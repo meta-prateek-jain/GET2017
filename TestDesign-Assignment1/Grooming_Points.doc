@@ -1,0 +1,13 @@
+Grooming Points:
+
+Point 1: Where to place the "Cancel Ticket" Button, globally (On home page) or locally (with the ticket to be cancelled).
+
+Point 2: If it is global button, then should we display the booked ticket list or take pnr no. of the ticket as input from user to cancel it.
+
+Point 3: Do we need to authenticate the user before refund transfer.
+
+Point 4: Do we need to send an email to user, if the cancellation failed.
+
+Point 5: If the train is delayed by some hours, then if a user wants to cancel the ticket then, is he applicable to get refund and if yes, then what percentage ?
+
+Point 6: If the train is cancelled due to some reason, then what percentage of amount should be refund to user.
