@@ -1,0 +1,35 @@
+
+<div class="container">
+<h2>All Products 
+  <div class="row">
+    <div class="panel-body">
+        <div class="table-responsive text-center">
+            <table class="table table-hover table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th class=" text-center">Product Id</th>
+                        <th class=" text-center">Name</th>
+                        <th class=" text-center">Price</th>
+                        <th class=" text-center">Options</th>
+                    </tr>
+                </thead>
+                <tbody><tr *ngFor="let product of products" (click)="onSelect(product)"
+                  [class.selected]="product === selectedProduct" >
+                  <td>{{product.id}}</td>
+                  <td>{{product.name}} </td>
+                  <td>{{product.price}}</td>
+                  <td>
+                    <button class="btn btn-warning" (click)="gotoDetail(product)"><span class="glyphicon glyphicon-pencil" ></span> Edit</button>
+                    <button class="delete btn btn-danger"
+                    (click)="delete(product); $event.stopPropagation()"><span class="glyphicon glyphicon-folder-close"></span> Delete</button>
+                    <button class="btn btn-info" (click)="getProductDetail()"><span class="glyphicon glyphicon-list-alt" ></span> Details</button>
+                    <button class="btn btn-info" (click)="addToCart(product)"><span class="glyphicon glyphicon-list-alt" ></span>Add To Cart</button>
+                      
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+
+</div>
+</div>
+

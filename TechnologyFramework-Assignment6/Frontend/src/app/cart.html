@@ -1,0 +1,35 @@
+
+<div class="container">
+    <button class="btn btn-info btn-lg pull right "  (click)="checkout()"  [routerLink]="['/payment']">
+      <span class="glyphicon glyphicon-list-alt"></span> Checkout</button>
+    <div class="table-responsive text-center">
+  
+      <table class="table table-hover table-striped table-bordered">
+  
+        <thead>
+          <tr>
+            <th class=" text-center">Product Name</th>
+            <th class=" text-center">Product Price</th>
+            <th class=" text-center">Product Quantity</th>
+            <th class=" text-center">Options</th>
+            
+          </tr>
+        </thead>
+  
+  
+        <tbody>
+          <tr *ngFor="let cart of cartItem">
+            <td>{{cart.pname}}</td>
+            <td>{{cart.price}} </td>
+            <td>{{cart.quantity}}</td>
+            <td>
+              <button class="btn btn-info btn-sm " [routerLink]="['/showdetail',cart.productId]">
+                          <span class="glyphicon glyphicon-list-alt"></span> Detail</button>
+              <button class="btn btn-danger btn-sm " (click)="deleteFromCart(cart)">
+                          <span class="glyphicon glyphicon-trash"></span></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>

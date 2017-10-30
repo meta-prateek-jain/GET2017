@@ -1,0 +1,31 @@
+<header>
+  <h1>SHOPPING CART</h1>
+  </header>
+  <nav class="navbar navbar-inverse" *ngIf="visible">
+  <div class="navbar-header">
+  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  <span class="icon-bar"></span>
+  </button>
+  </div>
+  <div class="collapse navbar-collapse" id="myNavbar">
+  <ul class="nav navbar-nav">
+  <li><a routerLink="/" routerLinkActive="active" (click)="signout()">Sign out</a></li>
+  <li><a routerLink="/dashboard" routerLinkActive="active">DashBoard</a></li>
+  <li><a routerLink="/productsList" routerLinkActive="active">Products</a></li>
+  <li><a routerLink="/contactUs" routerLinkActive="active">Contact Us</a></li>
+  <li><a routerLink="/cart" routerLinkActive="active" class="pull right">Cart</a></li>
+  
+  </ul>
+  <form class="navbar-form navbar-right">
+  <div class="form-group">
+  <product-search></product-search>
+  </div>
+  </form>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+<footer>
+  &copy; All Rights Reserved.
+</footer>

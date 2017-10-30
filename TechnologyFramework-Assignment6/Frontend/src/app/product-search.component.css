@@ -1,0 +1,22 @@
+.search-result{
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-radius: 4px;
+    width:200px;
+    padding: 5px;
+    color:black;
+    background-color:white;
+    cursor: pointer;
+  }
+  .search-result:hover {
+    color: black;
+    background-color: #607D8B;
+  }
+  input{
+    border-radius: 4px;
+    width:200px;
+    color:black;
+    margin-top:10px;
+  }
+  
